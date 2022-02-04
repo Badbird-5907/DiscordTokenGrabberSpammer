@@ -74,7 +74,7 @@ public class WebhookSpammer {
                     }
                 }
             }
-        }.run();
+        }.start();
     }
     public static String genRandomBase64(){
         String s = UUID.randomUUID().toString();

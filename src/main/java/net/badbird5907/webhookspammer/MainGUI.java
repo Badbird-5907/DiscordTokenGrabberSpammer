@@ -94,14 +94,7 @@ public class MainGUI implements ActionListener {
                     JOptionPane.showMessageDialog(frame, errorWaitField.getText() + " is not a valid number!");
                     return;
                 }
-                if (System.console() == null) {
-                    int input = JOptionPane.showConfirmDialog(null, "The gui will freeze until the webhook is deleted, you can run this with cmd to forcefully terminate the process (ctrl + c)\nAre you sure you want to start?");
-                    if (input == 0)
-                        new WebhookSpammer(webhookUrlField.getText(), messageField.getText(), nameField.getText(), avatarUrlField.getText(), error, ratelimit, delay);
-                    else System.exit(0);
-                }//dont show warning if theyre on console
-                else
-                    new WebhookSpammer(webhookUrlField.getText(), messageField.getText(), nameField.getText(), avatarUrlField.getText(), error, ratelimit, delay);
+                new WebhookSpammer(webhookUrlField.getText(), messageField.getText(), nameField.getText(), avatarUrlField.getText(), error, ratelimit, delay);
             }
         }
     }
